@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: jdbc:mysql://a3a-dev-db-mysql-flex.mysql.database.azure.com:3306/a3a_db
-    username: a3aAdmin@a3a-dev-db-mysql-flex
-    password: martin1004!@
+    username: a3aadmin@a3a-dev-db-mysql-flex
+    password: 'martin1004!@'
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
