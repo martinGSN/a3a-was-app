@@ -11,3 +11,19 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+info:
+  app:
+    name: A3A App
+    description: 3-Tier Architecture Demo App
+    version: 1.0.0
+  company: "Martin"
