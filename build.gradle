@@ -13,15 +13,26 @@ repositories {
 }
 
 dependencies {
+    // Spring 기본
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-security'
-    implementation 'org.apache.poi:poi-ooxml:5.2.3'
-    implementation 'org.projectlombok:lombok:1.18.30'
-    annotationProcessor 'org.projectlombok:lombok'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
-
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // MySQL
     implementation 'mysql:mysql-connector-java:8.0.33'
+
+    // Apache POI (Excel 처리용)
+    implementation 'org.apache.poi:poi-ooxml:5.2.3'
+
+    // ✅ Lombok (컴파일 전용)
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
+    
+    // ✅ Lombok (테스트용)
+    testCompileOnly 'org.projectlombok:lombok:1.18.30'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    // 테스트
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
