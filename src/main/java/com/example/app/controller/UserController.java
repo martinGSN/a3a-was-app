@@ -42,6 +42,13 @@ public class UserController {
             .orElseGet(() -> ResponseEntity.status(401).body("존재하지 않는 이메일"));
     }
 
+    @GetMapping("/check-email")
+    public ResponseEntity<Boolean> checkEmail(@RequestParam String email) {
+        boolean exists = userRepository.existsByEmail(email);
+        return ResponseEntity.ok(exists);  // true = 이미 있음, false = 사용 가능
+    }
+    
+
     @GetMapping("/me")
     public ResponseEntity<?> getCurrentUser(Authentication authentication) {
         if (authentication == null || authentication.getName() == null) {
