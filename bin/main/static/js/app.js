@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("/products")
+  fetch("/api/products")
     .then(res => res.json())
     .then(data => {
       const tbody = document.querySelector("#productTable tbody");
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
       price: parseFloat(document.getElementById("price").value)
     };
 
-    const res = await fetch("/products", {
+    const res = await fetch("/api/products", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(product)
